@@ -9,7 +9,7 @@ import argparse
 #arguments taken from command line
 parser = argparse.ArgumentParser()
 parser.add_argument("-wp","--wandb_project",help="Wandb project name",default="DA6401_ass_1_run")
-parser.add_argument("-we","--wandb_entity",help="Wandb Entity name.",default="3628-pavitrakhare")
+parser.add_argument("-we","--wandb_entity",help="Wandb Entity name.",default="3628-pavitrakhare-indian-institute-of-technology-madras")
 parser.add_argument("-d","--dataset",help="choices: ['mnist', 'fashion_mnist']",choices=['mnist', 'fashion_mnist'],default="fashion_mnist")
 parser.add_argument("-e","--epochs",help="Number of epochs.",default=10)
 parser.add_argument("-b","--batch_size",help="batch size in which data needs to be divided.",default=32)
@@ -831,7 +831,7 @@ for arg, dtype in expected_types.items():
 
 
 wandb.login(key="2ddfedd72c75efe3f8e05402fe38a36933f8d1ba")
-run = wandb.init(project=args.wandb_project)#,entity=args.wandb_entity)
+run = wandb.init(project=args.wandb_project,entity=args.wandb_entity)
 params = train(trainX=trainX,
     trainy=trainy,
     textX=testX,
@@ -852,5 +852,4 @@ params = train(trainX=trainX,
 test_ac = test_accuracy(testX,needed_y_test,params[0],params[1],params[2],params[3],params[4])
 
 print("Test accuracy on the model = ", test_ac*100,'%')
-wandb.save()
 wandb.finish()
