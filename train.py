@@ -830,7 +830,7 @@ for arg, dtype in expected_types.items():
         setattr(args, arg, dtype(getattr(args, arg)))
 
 
-wandb.login(key="2ddfedd72c75efe3f8e05402fe38a36933f8d1ba")
+wandb.login()
 run = wandb.init(project=args.wandb_project,entity=args.wandb_entity)
 params = train(trainX=trainX,
     trainy=trainy,
