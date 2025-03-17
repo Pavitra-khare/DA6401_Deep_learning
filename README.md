@@ -1,13 +1,12 @@
-# Deep Learning (CS6910) Assignment-1
+# **Deep Learning (DA6401) - Assignment 1**
 
-## Repository Overview
-
+## **Repository Overview**
 This repository contains implementations for training a feedforward neural network using only NumPy. The network is designed to work efficiently with datasets like MNIST and Fashion MNIST, offering customization for activation functions, loss functions, and various optimization methods.
 
 [GitHub Repository](https://github.com/Pavitra-khare/DA6401_Deep_learning/tree/main)  
 [Weights & Biases Report](https://api.wandb.ai/links/3628-pavitrakhare-indian-institute-of-technology-madras/6l8em45m)
 
-## Repository Contents
+## **Repository Contents**
 
 ### `train.py`
 This script allows training a feedforward neural network using specified hyperparameters. It accepts command-line arguments to customize training settings. If executed without arguments, it runs with optimized default parameters. 
@@ -18,7 +17,7 @@ This Jupyter Notebook contains all the assignment questions along with their imp
 ### `DL_Assignment1_sweepsLog.ipynb`
 This file logs all the output from running parameter sweeps using Weights & Biases.
 
-## Features
+## **Features**
 - Configurable neural network design
 - Support for activation functions: Sigmoid, Tanh, Identity, ReLU
 - Loss functions: Mean Squared Error and Cross Entropy
@@ -26,7 +25,21 @@ This file logs all the output from running parameter sweeps using Weights & Bias
 - Weight initialization methods: Xavier and Random
 - Logging and visualization using Weights & Biases
 
-## Best Parameters
+## **Installation**
+To set up the repository, follow these steps:
+
+### **Clone the Repository**
+```bash
+git clone https://github.com/Pavitra-khare/DA6401_Deep_learning.git
+cd DA6401_Deep_learning
+```
+
+### **Install Dependencies**
+```bash
+pip install numpy scikit-learn keras wandb argparse
+```
+
+## **Best Parameters**
 - **Epochs**: 10  
 - **Batch size**: 32  
 - **Loss function**: Cross Entropy  
@@ -38,12 +51,12 @@ This file logs all the output from running parameter sweeps using Weights & Bias
 - **Hidden layer size**: 128  
 - **Activation function**: ReLU  
 
-## Best Results Obtained
+## **Best Results Obtained**
 - **Train Accuracy**: 91.25%
 - **Validation Accuracy**: 88.94%
 - **Test Accuracy**: 87.57%
 
-## Command-Line Arguments
+## **Command-Line Arguments**
 
 | Name          | Default Value   | Description |
 |--------------|----------------|-------------|
@@ -66,11 +79,10 @@ This file logs all the output from running parameter sweeps using Weights & Bias
 | `-sz`, `--hidden_size`  | 4  | Number of hidden neurons in a feedforward layer. |
 | `-a`, `--activation`  | sigmoid  | choices: ["identity", "sigmoid", "tanh", "ReLU"] |
 
-
-## Training a Model
+## **Training a Model**
 To train a model, run:
 ```bash
 python train.py --wandb_entity myname --wandb_project myprojectname
 ```
-
 This will start training using the specified parameters or defaults if no arguments are provided.
+
